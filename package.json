@@ -1,5 +1,5 @@
 {
-  "name": "graphlabs-tasks-graphmatrices",
+  "name": "graphlabs.tasks.adjacencymatrixbygraph",
   "version": "0.1.3",
   "private": true,
   "dependencies": {
