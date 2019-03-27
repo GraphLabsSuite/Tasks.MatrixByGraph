@@ -49,7 +49,7 @@ class App extends TaskTemplate {
           ToolButtonList.prototype.beforeComplete = beforeComplete.bind(this);
           ToolButtonList.prototype.help = () => `В данном задании вы должны заполнить матрицу смежности
 в правой части модуля согласно выданному графу.
-После заполнения матрицы нажмите кнопку отправки для проверки задания`;
+После заполнения матрицы нажмите кнопку отправки для проверки`;
           return ToolButtonList;
       };
       return TaskToolbar;
