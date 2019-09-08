@@ -6,7 +6,9 @@ export interface State {
 }
 
 export interface Props {
-  get: (e: number) => void;
+    ind: number;
+    jnd: number;
+    get: (e: number) => void;
 }
 
 export class MatrixCell extends Component<Props, State> {
@@ -29,9 +31,36 @@ export class MatrixCell extends Component<Props, State> {
         });
   }
   render(): ReactNode {
-    return (
-        <div style={{ border: '1px double black', background: 'white', padding: '5px' }} onClick={this.handler}>
-          {this.state.value}
-        </div>);
+      if (this.props.ind === -2 || this.props.ind === -1) {
+          if (this.props.ind === -2) {
+              if (this.props.jnd === 0) {
+                  return (
+                      <div style={{border: '0px double black', textAlign: 'center', width: '40px', minHeight: '10px', background: ' ', padding: '6px' }} >
+                          {' '}
+                      </div>);
+              } else {
+                  return (
+                  <div style={{border: '0px double black', textAlign: 'center', width: '40px', minHeight: '10px', background: 'white', padding: '6px' }} >
+                      {this.props.jnd - 1}
+                  </div>);
+              }
+          } else {
+              return (
+                  <div style={{border: '1px double black', textAlign: 'center', width: '40px', minHeight: '10px', background: 'white', padding: '6px' }} onClick={this.handler}>
+                      {this.state.value}
+                  </div>);
+          }
+      } else {
+          if (this.props.ind === -2) {
+              return (
+                  <div style={{border: '0px double black', textAlign: 'center', width: '40px', minHeight: '10px', background: '', padding: '6px' }} >
+                      {' '}
+                  </div>);
+          } else {
+              return (
+              <div style={{border: '0px double black', textAlign: 'center', width: '40px', minHeight: '10px', background: 'white', padding: '6px'  }} >
+                  {this.props.ind}
+              </div>);
+          }}
   }
 }
