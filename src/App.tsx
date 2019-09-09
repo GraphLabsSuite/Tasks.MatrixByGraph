@@ -26,7 +26,7 @@ class App extends TaskTemplate {
                   const e = graph.edges.find((edge: IEdgeView) =>
                                              edge.vertexTwo === (index - 1).toString() && edge.vertexOne === (jndex - 1).toString()
                                              || edge.vertexOne === (index - 1).toString() && edge.vertexTwo === (jndex - 1).toString());
-                  console.log('IN = ', index - 1, 'JN = ', jndex - 1, 'A = ', this.values[index][jndex], 'Edg = ', e);
+                  // console.log('IN = ', index - 1, 'JN = ', jndex - 1, 'A = ', this.values[index][jndex], 'Edg = ', e);
                   if (index !== jndex && (this.values[index][jndex] === 0 && e !== void 0
                       || this.values[index][jndex] !== 0 && e === void 0)) {
                       res += 5;
@@ -35,7 +35,7 @@ class App extends TaskTemplate {
               }
           }
           // tslint:disable-next-line
-          console.log(res);
+          // console.log(res);
           return { success: res === 0, fee: res };
   }
 
